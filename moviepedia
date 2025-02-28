@@ -1,0 +1,23 @@
+#! /usr/bin/env php
+
+<?php
+
+require_once 'vendor/autoload.php';
+
+
+use Symfony\Component\Console\Application;
+use Acme\ShowCommand;
+use GuzzleHttp\Client;
+use Symfony\Component\Dotenv\Dotenv;
+
+$dotenv = new Dotenv();
+$dotenv->loadEnv(__DIR__ . '/.env');
+
+
+
+$app = new Application('Movies App', '1.0');
+
+$httpClient = new Client();
+$app->add(new ShowCommand($httpClient));
+
+$app->run();

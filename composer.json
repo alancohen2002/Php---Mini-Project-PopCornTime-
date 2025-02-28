@@ -1,0 +1,12 @@
+{
+    "require": {
+        "symfony/console": "~6.2.7",
+        "guzzlehttp/guzzle": "~7.5.0",
+        "symfony/dotenv": "^6.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Acme\\": "src"
+        }
+    }
+}
